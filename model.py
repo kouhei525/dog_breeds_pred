@@ -128,8 +128,7 @@ IMG_STD = [0.229, 0.224, 0.225]
 
 def predict(path):
     model_ft = models.resnet18(pretrained=True)
-    num_ftrs = model_ft.fc.in_features
-    model_ft.fc = nn.Linear(num_ftrs, len(class_names))
+    model_ft.fc = nn.Linear(512, 120)
     param = torch.load("breeds.pth", map_location=torch.device('cpu'))
     model_ft.load_state_dict(param)
     transform = transforms.Compose([transforms.Resize(300), transforms.ToTensor(),transforms.Normalize(IMG_MEAN, IMG_STD)])

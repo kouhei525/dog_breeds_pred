@@ -19,6 +19,8 @@ if img_file is not None:
         st.write("")
         result = predict(img)
         st.write(result)
+        link = f"[related pics](https://www.pinterest.jp/search/pins/?q={result}&rs=typed)"
+        st.markdown(link, unsafe_allow_html=True)
 
 st.sidebar.caption("""Used traindatasets by Aditya Khosla, Nityananda Jayadevaprakash, Bangpeng Yao and Li Fei-Fei. Novel dataset for Fine-Grained Image Categorization. \n
 First Workshop on Fine-Grained Visual Categorization (FGVC), IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2011. [pdf] [poster] [BibTex]\n

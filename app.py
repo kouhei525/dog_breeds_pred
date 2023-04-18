@@ -18,7 +18,7 @@ if img_file is not None:
         st.image(img, caption="Target", width=480)
         st.write("")
         result = predict(img)
-        st.write(f"## Your dog is{result}")
+        st.write(f"## Your dog is {result}")
         link = f"[related pics](https://www.pinterest.jp/search/pins/?q={result}&rs=typed)"
         st.markdown(link, unsafe_allow_html=True)
 

@@ -271,7 +271,7 @@ IMG_MEAN = [0.485, 0.456, 0.406]
 IMG_STD = [0.229, 0.224, 0.225]
 
 gz = ["750px-Shiba_Inu.jpg", "1599px-Jack_Russell_Terrier_2.jpg", "dog_img_1_zadyrqo88zk8.jpg", "640px-Wasao.jpg", "630px-Fawn_pug_2.5year-old.JPG", "chiwax.jpg","dalmatian.jpg", "pawawa01.jpg", "aurora.jpeg"]
-taisho = ["shiba", "jack", "marupu", "wasao", "pug", "chiwax", "dalmatian", "chiwapug", "aurora"]
+taisho = ["shiba", "jack", "marupu", "wasao", "puu", "chiwax", "dalmatian", "chiwapug", "aurora"]
 inu = {"shiba":shiba, "jack":jack, "marupu":marupu, "wasao":wasao, "puu":pug, "chiwax":chiwax, "dalmatian":dalmatian, "chiwapug":chiwapug, "aurora":aurora}
 num = []
 atai = []

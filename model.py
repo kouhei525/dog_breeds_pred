@@ -187,7 +187,7 @@ wasao=torch.tensor([-0.1297, -3.1812, -0.0242,  0.4058, -0.7048, -1.1334, -2.044
         -1.3681, -3.3139, -0.2648, -0.6984,  0.5368,  0.1139,  2.5948, -1.6404,
          0.4472,  1.0725, -2.7272,  0.6179, -2.2439, -1.3680, -1.9056, -1.4953])
 
-pug=torch.tensor([-2.7616,  0.9555, -1.5077,  1.1374,  0.3285, -2.6850, -1.8438, -1.8835,
+puu = torch.tensor([-2.7616,  0.9555, -1.5077,  1.1374,  0.3285, -2.6850, -1.8438, -1.8835,
          0.4558,  0.5514,  1.0590,  3.2715, -1.8031,  5.1888,  0.5211, -0.3572,
          0.2682,  0.9625, -2.0025, -2.4851, -1.8871,  0.5694, -0.0195, -1.6536,
          0.6510,  5.3425,  0.1076, -0.8564, -2.7426,  0.8806,  2.2670, -2.1128,
@@ -272,7 +272,7 @@ IMG_STD = [0.229, 0.224, 0.225]
 
 gz = ["750px-Shiba_Inu.jpg", "1599px-Jack_Russell_Terrier_2.jpg", "dog_img_1_zadyrqo88zk8.jpg", "640px-Wasao.jpg", "630px-Fawn_pug_2.5year-old.JPG", "chiwax.jpg","dalmatian.jpg", "pawawa01.jpg", "aurora.jpeg"]
 taisho = ["shiba", "jack", "marupu", "wasao", "puu", "chiwax", "dalmatian", "chiwapug", "aurora"]
-inu = {"shiba":shiba, "jack":jack, "marupu":marupu, "wasao":wasao, "puu":pug, "chiwax":chiwax, "dalmatian":dalmatian, "chiwapug":chiwapug, "aurora":aurora}
+inu = {"shiba":shiba, "jack":jack, "marupu":marupu, "wasao":wasao, "puu":puu, "chiwax":chiwax, "dalmatian":dalmatian, "chiwapug":chiwapug, "aurora":aurora}
 num = []
 atai = []
 

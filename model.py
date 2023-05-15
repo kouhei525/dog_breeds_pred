@@ -267,12 +267,28 @@ aurora = torch.tensor([-3.0266,  0.1266, -2.7062,  0.7422,  0.3204, -3.2239, -2.
         -2.2947,  1.2959, -2.4052,  0.8878,  4.1030, -0.5938,  0.3557, -1.7345,
          0.4253, -1.7948, -1.1245, -1.8928,  2.5626, -3.0782,  0.5593, -2.1725])
 
+tosakun = torch.tensor([-0.7230, -1.3562, -1.6953,  5.4068,  0.3074, -1.1664, -1.4088, -3.3570,
+        -2.4592, -2.7658,  0.4664,  0.7128, -2.0831,  1.3833, -2.0884, -0.8967,
+         2.1566,  2.0484, -0.5578,  0.4864,  1.4959, -2.1831, -2.9052, -0.6442,
+        -0.8877,  3.0251,  0.3386,  0.8360, -3.2006,  6.1935, -0.5797,  1.2170,
+         2.1551, -2.2920,  0.4114, -2.2398, -0.4344,  1.2690, -2.8633, -1.5405,
+         3.7803, -0.6006,  1.1018,  0.8141, -0.7307,  0.4124, -0.8429,  0.7223,
+        -1.7796,  0.3913, -1.6236, -1.6715, -0.0298, -1.3672,  7.0297,  0.4479,
+         0.3430,  0.4649, -2.0080, -0.2346, -2.0920, -0.5521, -2.3366, -2.0133,
+        -1.5792,  3.3363,  1.0171, -1.1647, -0.0610,  1.2186,  4.0580, -2.4815,
+        -0.8327, -1.2653, -1.9584,  2.1296,  1.8312,  1.9882,  0.0197,  4.7192,
+        -0.4931, -3.1930,  5.9566,  0.4798,  8.1777, -0.0570,  0.4614, -0.5936,
+        -0.2337, -1.1335, -1.3360, -0.4913,  3.3126, -1.5554,  0.7905,  1.7797,
+        -2.9821, -3.2899,  0.7640, -2.8739, -1.0453, -1.4397,  2.4814,  0.6108,
+        -2.3406,  0.0594, -1.1621, -3.8469,  1.5265,  4.5502, -2.8917, -0.6945,
+        -0.5807, -1.6680, -0.6013, -2.4009, -0.7639,  5.4986,  3.0071, -2.0080])
+
 IMG_MEAN = [0.485, 0.456, 0.406]
 IMG_STD = [0.229, 0.224, 0.225]
 
-gz = ["750px-Shiba_Inu.jpg", "1599px-Jack_Russell_Terrier_2.jpg", "dog_img_1_zadyrqo88zk8.jpg", "640px-Wasao.jpg", "630px-Fawn_pug_2.5year-old.JPG", "chiwax.jpg","dalmatian.jpg", "pawawa01.jpg", "aurora.jpeg"]
-taisho = ["shiba", "jack", "marupu", "wasao", "puu", "chiwax", "dalchan", "chiwapug", "aurora"]
-inu = {"shiba":shiba, "jack":jack, "marupu":marupu, "wasao":wasao, "puu":puu, "chiwax":chiwax, "dalchan":dalchan, "chiwapug":chiwapug, "aurora":aurora}
+gz = ["750px-Shiba_Inu.jpg", "1599px-Jack_Russell_Terrier_2.jpg", "dog_img_1_zadyrqo88zk8.jpg", "640px-Wasao.jpg", "630px-Fawn_pug_2.5year-old.JPG", "chiwax.jpg","dalmatian.jpg", "pawawa01.jpg", "aurora.jpeg", "tosa.jpg"]
+taisho = ["shiba", "jack", "marupu", "wasao", "puu", "chiwax", "dalchan", "chiwapug", "aurora", "tosakun"]
+inu = {"shiba":shiba, "jack":jack, "marupu":marupu, "wasao":wasao, "puu":puu, "chiwax":chiwax, "dalchan":dalchan, "chiwapug":chiwapug, "aurora":aurora, "tosakun":tosakun}
 num = []
 atai = []
 
@@ -293,7 +309,7 @@ def predict(path):
     param = torch.load("breeds.pth", map_location=torch.device('cpu'))
     model_ft.load_state_dict(param)
     transform = transforms.Compose([transforms.Resize(300), transforms.ToTensor(),transforms.Normalize(IMG_MEAN, IMG_STD)])
-    #path = Image.open(path)
+    path = Image.open(path)
     inputs = transform(path)
     input = torch.unsqueeze(inputs, 0)
     model_ft.eval()
@@ -304,6 +320,6 @@ def predict(path):
     label = taisho[nirudog]
     return class_names[preds],img,label,outputs[0]
 
-# ans = predict("aurora.jpeg")
-# print(ans[2],ans[3])
+ans = predict("tosa.jpg")
+print(ans[2],ans[3])
 

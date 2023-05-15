@@ -309,7 +309,7 @@ def predict(path):
     param = torch.load("breeds.pth", map_location=torch.device('cpu'))
     model_ft.load_state_dict(param)
     transform = transforms.Compose([transforms.Resize(300), transforms.ToTensor(),transforms.Normalize(IMG_MEAN, IMG_STD)])
-    path = Image.open(path)
+    #path = Image.open(path)
     inputs = transform(path)
     input = torch.unsqueeze(inputs, 0)
     model_ft.eval()
@@ -320,6 +320,6 @@ def predict(path):
     label = taisho[nirudog]
     return class_names[preds],img,label,outputs[0]
 
-ans = predict("tosa.jpg")
-print(ans[2],ans[3])
+# ans = predict("tosa.jpg")
+# print(ans[2],ans[3])
 

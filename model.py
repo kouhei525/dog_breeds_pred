@@ -283,12 +283,37 @@ tosakun = torch.tensor([-0.7230, -1.3562, -1.6953,  5.4068,  0.3074, -1.1664, -1
         -2.3406,  0.0594, -1.1621, -3.8469,  1.5265,  4.5502, -2.8917, -0.6945,
         -0.5807, -1.6680, -0.6013, -2.4009, -0.7639,  5.4986,  3.0071, -2.0080])
 
+mairo = torch.tensor([-5.5926e-01, -8.2569e-01, -3.1176e+00, -2.7304e+00,  6.4241e-01,
+         1.0438e+00, -2.2495e+00,  3.8212e-01,  3.6414e+00,  4.0185e+00,
+        -3.1079e-01,  1.3325e+00, -3.3114e+00, -9.3996e-01,  1.5880e+00,
+         2.9456e+00, -3.2262e+00,  7.8470e+00, -2.2496e-01, -3.3628e+00,
+        -2.4686e+00,  2.7021e+00,  1.7739e+00, -2.2193e+00,  1.7886e+00,
+         8.6303e-02, -2.6474e+00, -2.2266e+00, -2.8172e+00, -2.9391e+00,
+         2.7565e-01, -2.3332e+00, -7.7620e-03, -1.0733e+00, -1.0432e+00,
+        -3.4572e+00, -9.2455e-01,  3.0225e+00,  4.2322e+00, -2.4815e+00,
+        -1.1945e+00, -1.7050e+00, -2.5116e+00,  2.8584e+00,  2.9408e+00,
+         6.3569e-03, -1.4848e+00,  2.8758e+00, -3.6241e-01,  1.0493e+00,
+        -4.6583e-01,  3.6672e+00,  4.7350e+00,  5.6747e+00, -3.4693e+00,
+        -4.1877e+00, -1.4284e+00,  2.0772e+00, -1.1017e-01,  3.3883e-01,
+        -6.2831e-01, -1.0343e+00,  3.6725e+00,  3.6740e+00,  3.2411e+00,
+        -1.9875e+00, -1.4349e+00, -3.2572e+00,  1.8999e+00, -2.7020e+00,
+        -1.1762e+00,  5.9931e-01,  1.3801e+00,  3.9024e+00,  7.8373e-01,
+        -1.2376e+00, -1.8285e+00,  1.3145e+00, -4.8398e+00, -4.7887e+00,
+        -9.7942e-01,  1.4340e+00, -2.9604e+00, -2.6698e-01, -5.2565e+00,
+         1.0559e+00, -3.7936e+00, -1.1570e-01,  1.3118e+00,  2.0399e+00,
+        -3.2096e+00, -9.2200e-01, -1.0616e+00, -8.1529e-01, -3.0452e+00,
+        -1.4557e-01, -2.3269e+00,  1.3222e+00, -7.8489e-01, -2.6244e+00,
+        -1.4842e+00,  3.1854e+00, -2.9681e+00,  1.6519e+00,  1.6371e-01,
+         4.3297e+00, -1.9731e+00,  9.5248e+00, -2.8863e-01, -2.5275e+00,
+         1.3849e+00,  3.0882e+00, -1.5362e+00, -2.2352e+00, -2.1705e-01,
+         1.9321e+00,  6.2059e+00, -2.7010e+00,  5.1463e-01, -6.6730e-02])
+
 IMG_MEAN = [0.485, 0.456, 0.406]
 IMG_STD = [0.229, 0.224, 0.225]
 
-gz = ["750px-Shiba_Inu.jpg", "1599px-Jack_Russell_Terrier_2.jpg", "dog_img_1_zadyrqo88zk8.jpg", "640px-Wasao.jpg", "630px-Fawn_pug_2.5year-old.JPG", "chiwax.jpg","dalmatian.jpg", "pawawa01.jpg", "aurora.jpeg", "tosa.jpg"]
-taisho = ["shiba", "jack", "marupu", "wasao", "puu", "chiwax", "dalchan", "chiwapug", "aurora", "tosakun"]
-inu = {"shiba":shiba, "jack":jack, "marupu":marupu, "wasao":wasao, "puu":puu, "chiwax":chiwax, "dalchan":dalchan, "chiwapug":chiwapug, "aurora":aurora, "tosakun":tosakun}
+gz = ["750px-Shiba_Inu.jpg", "1599px-Jack_Russell_Terrier_2.jpg", "dog_img_1_zadyrqo88zk8.jpg", "640px-Wasao.jpg", "630px-Fawn_pug_2.5year-old.JPG", "chiwax.jpg","dalmatian.jpg", "pawawa01.jpg", "aurora.jpeg", "tosa.jpg","mairo.jpeg"]
+taisho = ["shiba", "jack", "marupu", "wasao", "puu", "chiwax", "dalchan", "chiwapug", "aurora", "tosakun", "mairo"]
+inu = {"shiba":shiba, "jack":jack, "marupu":marupu, "wasao":wasao, "puu":puu, "chiwax":chiwax, "dalchan":dalchan, "chiwapug":chiwapug, "aurora":aurora, "tosakun":tosakun, "mairo":mairo}
 num = []
 atai = []
 
@@ -320,6 +345,5 @@ def predict(path):
     label = taisho[nirudog]
     return class_names[preds],img,label,outputs[0]
 
-# ans = predict("tosa.jpg")
+# ans = predict("mairo.jpeg")
 # print(ans[2],ans[3])
-

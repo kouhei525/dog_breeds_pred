@@ -15,7 +15,7 @@ elif img_source == "take a photo":
 if img_file is not None:
     with st.spinner("guessing..."):
         img = Image.open(img_file)
-        st.image(img, caption="Target", width=480)
+        st.image(img, caption="Your pic", width=180)
         st.write("")
         result = predict(img)
         st.write(f"## This dog is {result[0]}")
